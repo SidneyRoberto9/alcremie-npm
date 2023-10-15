@@ -4,21 +4,22 @@ import { BASE_URL } from '../variables';
 import { Image, DefaultImage } from '../types';
 
 /**
- * Get random Image sfw/nsfw.
- * @returns {Image}
+ * Retrieve a random image, which can be either safe for work (SFW) or not safe for work (NSFW).
+ * @returns {Image} The randomly selected image.
  */
-const random = async (): Promise<Image> => {
+async function random(): Promise<Image> {
   const url = BASE_URL + '/random-image';
 
   const { data } = await axios.get<DefaultImage>(url);
 
-  const { url: imageUrl, size, isNsfw } = data;
+  const { url: imageUrl, size, isNsfw, id } = data;
 
   return {
+    id,
     url: imageUrl,
     size,
     isNsfw,
   } as Image;
-};
+}
 
 export { random };

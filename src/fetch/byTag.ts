@@ -1,15 +1,28 @@
 import axios from 'axios';
 
-import { tags } from './tags';
 import { BASE_URL } from '../variables';
-import { Image, DefaultImage } from '../types';
+import { Image, GetTagResponse, DefaultTag, DefaultImage } from '../types';
+
+interface RandomByTagProps {
+  tag: string;
+}
 
 /**
- * Get random Image sfw/nsfw, by tag.
- * @returns {Image}
+ * Retrieve a random image by tag, which can be either safe for work (SFW) or not safe for work (NSFW).
+ * @param {string} tag - The tag text to search.
+ * @returns {Image} The randomly selected image.
  */
-const randomByTag = async (tag: string): Promise<Image> => {
+async function randomByTag({ tag }: RandomByTagProps): Promise<Image> {
   const url = BASE_URL + '/random-image';
+
+  const { data: tagData } = await axios.get<GetTagResponse>(BASE_URL + '/tags', {
+    params: {
+      limit: 4000,
+    },
+  });
+
+  const tags: DefaultTag[] = tagData.tags;
+
   const searchTag = tags.find((tagOpt) => tagOpt.name === tag);
 
   if (searchTag) {
@@ -37,6 +50,6 @@ const randomByTag = async (tag: string): Promise<Image> => {
     size,
     isNsfw,
   } as Image;
-};
+}
 
 export { randomByTag };
