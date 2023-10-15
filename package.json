@@ -1,6 +1,6 @@
 {
   "name": "alcremie",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "An api of images related to Anime/Manga, to make your search easier!",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
