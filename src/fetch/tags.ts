@@ -14,10 +14,11 @@ interface TagProps {
  * @param {number} limit - Maximum number of tags to retrieve.
  * @returns {TagResponse} An object containing 'tags' and 'total'.
  */
-async function tags({ q = '', limit = 10 }: TagProps): Promise<TagResponse> {
-  const url = BASE_URL + '/tag';
+async function tags(tagsProps?: TagProps): Promise<TagResponse> {
+  const q = tagsProps ? tagsProps.q.toLowerCase().trim() : '';
+  const limit = tagsProps ? tagsProps.limit : 10;
 
-  q = q.toLowerCase().trim();
+  const url = BASE_URL + '/tag';
 
   const { data } = await axios.get<GetTagResponse>(url, {
     params: {

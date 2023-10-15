@@ -18,15 +18,11 @@ interface ImageProps {
  * @param {string} q - Tag ID to search.
  * @returns {ImageContentResponse} An object with 'page', 'totalPage', 'hasNext', and 'data'.
  */
-async function images({
-  page = 1,
-  nsfw = false,
-  limit = 10,
-  q = '',
-}: ImageProps): Promise<ImageContentResponse> {
-  if (page < 1) {
-    page = 1;
-  }
+async function images(imageProps?: ImageProps | null): Promise<ImageContentResponse> {
+  const page = imageProps ? (imageProps.page < 1 ? 1 : imageProps.page) : 1;
+  const nsfw = imageProps ? imageProps.nsfw : false;
+  const limit = imageProps ? imageProps.limit : 10;
+  const q = imageProps ? imageProps.q : '';
 
   const url = BASE_URL + '/image/' + page;
 
