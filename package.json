@@ -1,0 +1,30 @@
+{
+  "name": "alcremie",
+  "version": "1.0.1",
+  "description": "An api of images related to Anime/Manga, to make your search easier!",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "axios": "^1.5.1",
+    "typescript": "^5.2.2"
+  },
+  "author": "sidneyRoberto9",
+  "license": "ISC",
+  "keywords": [
+    "nsfw",
+    "images",
+    "pictures",
+    "wallpaper",
+    "anime",
+    "manga",
+    "hentai",
+    "alcremie",
+    "api"
+  ]
+}
