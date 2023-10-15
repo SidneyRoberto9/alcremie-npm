@@ -14,56 +14,43 @@
 Alcremie is a package full of images related to waifus, but remember that
 I'm the only one working on it, and I choose images that will be added. Use it for your Discord Bot, your own consumption or whatever :3
 
-<!--
-[Discord Server](https://discord.gg/DxHvWwC) | [Repository](https://gitlab.com/weeb-squad/akaneko) | [Help fund Akaneko♡](https://www.buymeacoffee.com/ryumin) -->
+## Application/Demo
+
+Take a look at this package working in my gallery OwO
+
+[Alcremie App](https://alcremie.vercel.app/)
 
 ## Installation
 
 `npm install alcremie`
 
-<!-- ## Example(s)
+## Example(s)
 
 **NodeJS:**
 
 ```javascript
-// Akaneko //
+// Alcremie //
 const alcremie = require('alcremie');
 
 async function yourFunctionName() {
-  // Get SFW Neko Images, uwu //
-  console.log('SFW Neko: ' + (await akaneko.neko()));
+  // Get a random Image //
+  console.log('Random Image: ' + (await alcremie.random()));
 
-  // Get Lewd Neko (NSFW), owo //
-  console.log('Lewd Neko:' + (await akaneko.lewdNeko()));
+  // Fetch Image  //
+  console.log('Data:' + (await akaneko.image()));
 
-  // Lewd Bomb me onii-san~~ //
-  console.log('Lewd Bomb: ' + (await akaneko.lewdBomb(5)));
+  // Fetch 100 images //
+  console.log('Data:' + (await akaneko.image({ limit: 100 })));
 
-  // Get other NSFW Images //
-  console.log('BDSM: ' + (await akaneko.nsfw.bdsm()));
-  console.log('Maid: ' + (await akaneko.nsfw.maid()));
-  console.log('Hentai: ' + (await akaneko.nsfw.hentai()));
+  // Get Status //
+  console.log('Status:' + (await akaneko.status()));
 }
 
 // Call your Function! //
 yourFunctionName();
 ```
 
-## Legacy Function(s)
-
-Example:
-
-```javascript
-akaneko.function(); // Format
-akaneko.lewdNeko(); // Example
-akaneko.lewdBomb(5); // Meow, I'm Example 2
-```
-
-| Function    | Description                   |
-| ----------- | ----------------------------- |
-| lewdNeko    | NSFW Neko Girls (Cat Girls)   |
-| lewdBomb(n) | Sends (n) amount of lewds! :3 |
-
+<!--
 ## SFW Function(s)
 
 Example:
@@ -150,69 +137,6 @@ yourFunctionName();
 // Option 2, Returning a Promise //
 akaneko.nsfw.maid().then((imageURL) => {
   return console.log(imageURL);
-});
-```
-
-##
-
-Discord Bot Example
-
-```javascript
-const Discord = require('discord.js');
-const akaneko = require('akaneko');
-
-// Create New Client //
-const client = new Discord.Client();
-
-// Bot Settings //
-const settings = {
-  prefix: "YOUR_BOT_PREFIX",
-  token: 'YOUR_BOT_TOKEN'
-}
-
-// EmbedBuilder //
-const EmbedBuilder = Discord.EmbedBuilder;
-
-// On "Message" Event! //
-client.on('messageCreate', async (message) => {
-
-  // Checks if message channel is NSFW! //
-  if (!message.channel.nsfw) return message.channel.send('This channel isn\'t NSFW!');
-
-  // Create New Embed //
-  const embed = new EmbedBuilder();
-
-  // Defines Command //
-  var command = message.content.toLowerCase().slice(settings.prefix.length).split(' ')[0];
-
-  // Onii-chan, don't reply! //
-  if (!message.content.startsWith(settings.prefix) || message.author.bot) return;
-
-  if (command == 'lewdneko') {
-
-    // For Embed //
-    embed.setImage(await akaneko.lewdNeko());
-    return message.channel.send({ embeds: [embed] });
-
-    // For Plain Text //
-    return message.channel.send(await akaneko.lewdNeko());
-
-  } else if (command == 'maid') {
-
-    // For Embed //
-    embed.setImage(await akaneko.nsfw.maid());
-    return message.channel.send({ embeds: [embed] });
-
-    // For Plain Text //
-    return message.channel.send(await akaneko.nsfw.maid());
-
-  }
-
-}
-
-  // Login to your bot using the bot token! (don't share it!) //
-  client.login(settings.token);
-
 });
 ``` -->
 

@@ -4,6 +4,10 @@
   "description": "An api of images related to Anime/Manga, to make your search easier!",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SidneyRoberto9/alcremie-npm"
+  },
   "files": [
     "/dist"
   ],
