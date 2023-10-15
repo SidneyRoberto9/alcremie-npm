@@ -4,10 +4,10 @@ import { BASE_URL } from '../variables';
 import { ImageContentResponse, GetImageResponse } from '../types';
 
 interface ImageProps {
-  page: number;
-  nsfw: boolean;
-  limit: number;
-  q: string;
+  page?: number;
+  nsfw?: boolean;
+  limit?: number;
+  q?: string;
 }
 
 /**

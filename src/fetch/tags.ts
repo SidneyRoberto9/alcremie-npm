@@ -4,8 +4,8 @@ import { BASE_URL } from '../variables';
 import { TagResponse, GetTagResponse } from '../types';
 
 interface TagProps {
-  q: string;
-  limit: number;
+  q?: string;
+  limit?: number;
 }
 
 /**
