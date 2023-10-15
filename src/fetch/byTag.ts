@@ -21,7 +21,7 @@ async function randomByTag({ tag }: RandomByTagProps): Promise<Image> {
     },
   });
 
-  const tags: DefaultTag[] = tagData.tags;
+  const tags: DefaultTag[] = tagData.tag;
 
   const searchTag = tags.find((tagOpt) => tagOpt.name === tag);
 
