@@ -26,10 +26,10 @@ async function tags({ q = '', limit = 10 }: TagProps): Promise<TagResponse> {
     },
   });
 
-  const { tags, total } = data;
+  const { tag, total } = data;
 
   return {
-    tags: tags.map((tag) => ({ id: tag.id, name: tag.name })),
+    tags: tag.map((tag) => ({ id: tag.id, name: tag.name })),
     total,
   } as TagResponse;
 }

@@ -49,7 +49,7 @@ export interface DefaultTag {
 }
 
 export interface GetTagResponse {
-  tags: DefaultTag[];
+  tag: DefaultTag[];
   total: number;
 }
 
@@ -64,7 +64,7 @@ export interface GetStatusResponse {
   statistics: Status;
 }
 export interface Status {
-  images: number;
-  tags: number;
-  requests: number;
+  image: number;
+  tag: number;
+  request: number;
 }

@@ -12,12 +12,12 @@ async function status(): Promise<Status> {
 
   const { data } = await axios.get<GetStatusResponse>(url);
 
-  const { images, requests, tags } = data.statistics;
+  const { image, request, tag } = data.statistics;
 
   return {
-    images,
-    requests,
-    tags,
+    image,
+    request,
+    tag,
   } as Status;
 }
 
