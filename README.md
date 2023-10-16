@@ -37,13 +37,13 @@ async function yourFunctionName() {
   console.log('Random Image: ' + (await alcremie.random()));
 
   // Fetch Image  //
-  console.log('Data:' + (await akaneko.image()));
+  console.log('Data:' + (await alcremie.image()));
 
   // Fetch 100 images //
-  console.log('Data:' + (await akaneko.image({ limit: 100 })));
+  console.log('Data:' + (await alcremie.image({ limit: 100 })));
 
   // Get Status //
-  console.log('Status:' + (await akaneko.status()));
+  console.log('Status:' + (await alcremie.status()));
 }
 
 // Call your Function! //
